@@ -1,0 +1,24 @@
+server:
+  port: ${PORT_SERVICE:8866}
+
+companies: >
+  bancofuturo
+  appgate
+
+jdbc:
+  driverClassName: org.postgresql.Driver
+  url: jdbc:postgresql://${jdbc.host}:${jdbc.port}/${jdbc.db.name}
+  host: localhost
+  port: 5432
+  db.name: ${DATABASE_NAME:bancofuturo}
+  username: postgres
+  password: postgres
+
+# HIBERNATE
+hibernate:
+  dialect: org.hibernate.dialect.PostgreSQLDialect
+#  dialect: org.hibernate.dialect.Oracle10gDialect
+#  dialect: org.hibernate.dialect.SQLServer2012Dialect
+  show_sql: false
+  format_sql: true
+  jdbc.lob.non_contextual_creation: true
